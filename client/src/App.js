@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import Login from './components/LoginSignupPages/Login';
 import Signup from './components/LoginSignupPages/Signup';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import axios from 'axios';
+import Home from './components/Home';
 
 function App() {
   const dispatch = useDispatch();
@@ -23,6 +25,10 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+          <Route exact path='/'>
+            <Home />
+          </Route>
+
           <Route exact path='/login'>
             <Login />
           </Route>

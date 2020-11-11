@@ -56,7 +56,7 @@ function Signup({ loading, user }) {
   return ((user && !loading) ? <Redirect to="/home" /> :
     <>
       <WatercolorBackground />
-      <Container className='loginSisgnupContainer'>
+      <Container className='loginSignupContainer'>
 
         <Form>
           <Form.Row>
