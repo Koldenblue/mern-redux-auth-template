@@ -11,6 +11,7 @@
 5. <a href="#license">License</a>
 6. <a href="#questions">Issues and Questions</a>
 <hr><h3 id='description'>Description</h3>
+<p>A quick demonstration may be viewed at the <a href='https://mern-redux-auth-template.herokuapp.com/'>deployed website</a>.</p>
 This project provides a template for user authentication and serialization, using the MERN stack (MongoDB, Express.js, React.js, and Node.js). The Redux library for React plays an important role in allowing individual React components to retrieve user-related data. User login information is stored in a Mongo non-relational database. The mongoose npm package is used to manage MongoDB queries. Bcrypt is used to encrypt passwords. Express.js and the passport npm package are used for back-end routing, user serialization, and authentication middleware. The axios npm package is used for communication from front-end components to the back-end database. The dotenv package may be used to store locally-scoped variables, such as api keys or authentication bypass for a dev environment. React and react router packages are used for front-end routing. Redux and the morgan logger package also provide useful debugging functionality. Finally, minimal basic styling is provided through Bootstrap. 
 
 ![image](https://user-images.githubusercontent.com/64618290/98846319-c3002300-2403-11eb-8067-b3b7206bbc2a.png)
