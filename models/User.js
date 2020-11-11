@@ -17,12 +17,13 @@ const userSchema = new Schema({
     }
 });
 
-userSchema.pre("save", function(){
-   return bcrypt.hash(this.password, HASH_TIMES).then(hash=> {
-        this.password = hash;
-    })
+userSchema.pre("save", function () {
+    if (this.isNew) {
+        return bcrypt.hash(this.password, HASH_TIMES).then(hash => {
+            this.password = hash;
+        })
+    } else return;
 });
-
 
 userSchema.methods.checkPassword = function(password){
     return bcrypt.compareSync(password, this.password)

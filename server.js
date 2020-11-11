@@ -36,7 +36,12 @@ app.use(express.static("public"));
 
 
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/DBNAME", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/DBNAME", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+});
 
 
 app.listen(PORT, () => {
