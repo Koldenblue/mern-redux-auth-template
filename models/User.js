@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const HASH_TIMES = 10;
+const ENCRYPT_TIMES = 10;
 
 const { Schema } = mongoose;
 
@@ -20,7 +20,7 @@ const userSchema = new Schema({
 // hash password, but only if creating a new user
 userSchema.pre("save", function () {
     if (this.isNew) {
-        return bcrypt.hash(this.password, bcrypt.genSaltSync(10), null).then(hash => {
+        return bcrypt.hash(this.password, bcrypt.genSaltSync(ENCRYPT_TIMES), null).then(hash => {
             this.password = hash;
         })
     } else return;
