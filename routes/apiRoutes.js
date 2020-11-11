@@ -3,7 +3,7 @@ const axios = require("axios");
 const db = require("../models")
 const passport = require("../config/passport");
 require("dotenv").config();
-
+// Routes starting with '/api/'
 
 router.post('/login', passport.authenticate("local"), (req, res) => {
   let response = {
