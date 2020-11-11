@@ -1,11 +1,22 @@
+import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { loggedInUser, selectLoggedInUser } from '../redux/userSlice';
 
 export default function Home() {
   const [loginStatus, setLoginStatus] = useState();
+  const dispatch = useDispatch();
   let userInfo = useSelector(selectLoggedInUser);
 
+  const logout = () => {
+    Axios.get('api/logout').then(() => {
+      // reloading the page also works, since the logged in user is retrieved from the store upon page load
+      dispatch(loggedInUser(null));
+      // window.location.reload();
+    })
+  }
+
+  // upon login status change, conditionally render home page
   useEffect(() => {
     if (userInfo) {
       console.log(userInfo);
@@ -13,7 +24,7 @@ export default function Home() {
         <p>
           You are logged in as user "{userInfo.username}".
         </p>
-        <a href='/logout'>log out</a>
+        <button onClick={logout}>log out</button>
       </>)
     } else {
       setLoginStatus(<>
@@ -23,7 +34,8 @@ export default function Home() {
         <a href='/login'>go to login page</a>
       </>)
     }
-  }, [])
+  }, [userInfo])
+
 
   return(
     <>

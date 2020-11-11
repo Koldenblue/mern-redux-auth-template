@@ -16,6 +16,7 @@ function AlertBox(props) {
     }
   }
 
+  // makes alert box transparent when empty. Makes alert box appear if there is a message.
   useEffect(() => {
     if (props.message !== '') {
       setOpacity(1)

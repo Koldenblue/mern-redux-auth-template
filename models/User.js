@@ -17,6 +17,7 @@ const userSchema = new Schema({
     }
 });
 
+// hash password, but only if creating a new user
 userSchema.pre("save", function () {
     if (this.isNew) {
         return bcrypt.hash(this.password, HASH_TIMES).then(hash => {

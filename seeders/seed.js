@@ -6,6 +6,7 @@ mongoose.connect("mongodb://localhost/DBNAME", {
   useFindAndModify: false
 });
 
+// username 1, password 1
 let seeder = 
 {
   "username" : "1",

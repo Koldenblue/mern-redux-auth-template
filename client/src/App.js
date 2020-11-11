@@ -11,7 +11,7 @@ function App() {
   const dispatch = useDispatch();
   let userInfo = useSelector(selectLoggedInUser);
 
-  // gets user info if already logged in (otherwise redux store state is reset to initial value on page reload)
+  // upon route switch, gets user info if already logged in (otherwise redux store state is reset to initial value on page reload)
   useEffect(() => {
     axios.get("/api/userdata").then(({ data }) => {
       if (data) {

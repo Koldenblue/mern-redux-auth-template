@@ -28,7 +28,6 @@ function Signup({ loading, user }) {
       }
 
       axios.post('api/users', user).then(data => {
-        // console.log(data)
         if (data.data === "That username already exists!") {
           setMessage(data.data);
         }
@@ -36,7 +35,8 @@ function Signup({ loading, user }) {
           setMessage(data.data);
         }
         else {
-          window.location.href = '/login';
+          // window.location.href = '/login';
+          history.push('/login');
         }
       })
     }
@@ -44,9 +44,11 @@ function Signup({ loading, user }) {
 
   let goToLogin = (event) => {
     event.preventDefault();
-    window.location.replace("/login")
+    // window.location.replace("/login")
+    history.push('/login');
   }
 
+  // sets alert box message back to blank whenever username or password fields are edited
   useEffect(() => {
     if (message !== "") {
       setMessage("");

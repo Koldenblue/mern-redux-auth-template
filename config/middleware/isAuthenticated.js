@@ -8,6 +8,8 @@ module.exports = function(req, res, next) {
   // If the user is logged in, continue with the request to the restricted route
 
 //==========REMOVE FOR DEPLOYMENT======================
+// this code will allow the isAuthenticated middleware to be bypassed, even if not logged in
+// must additionally set variable in .env file
 // if (process.env.BYPASS_AUTHENTICATION === 'yes') {
 //    return next();
 // }

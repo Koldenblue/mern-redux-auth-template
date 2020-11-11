@@ -54,6 +54,7 @@ function Login() {
     history.push('/signup')
   }
 
+  // sets alert box message back to blank whenever username or password fields are edited
   useEffect(() => {
     if (message !== "") {
       setMessage("");

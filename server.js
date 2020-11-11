@@ -31,10 +31,7 @@ app.use(express.static("public"));
 // port 3000 uses the react routes
 // with this setup, the express frontend is on port 3001
 // and the react front end is on 3000
-// the 3000 routes don't seem to hit the 3001 routes
-
-
-
+// the 3000 routes don't hit the 3001 routes
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/DBNAME", {
   useNewUrlParser: true,
