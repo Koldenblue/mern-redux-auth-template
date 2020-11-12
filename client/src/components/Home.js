@@ -20,19 +20,21 @@ export default function Home() {
   useEffect(() => {
     if (userInfo) {
       console.log(userInfo);
-      setLoginStatus(<>
+      setLoginStatus(
+      <div className='home'>
         <p>
           You are logged in as user "{userInfo.username}".
         </p>
-        <button onClick={logout}>log out</button>
-      </>)
+        <button className='btn-primary btn' onClick={logout}>log out</button>
+      </div>)
     } else {
-      setLoginStatus(<>
+      setLoginStatus(
+      <div className='home'>
         <p>
           You are not logged in.
         </p>
-        <a href='/login'>go to login page</a>
-      </>)
+        <a href='/login'>Go to login page</a>
+      </div>)
     }
   }, [userInfo])
 
