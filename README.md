@@ -20,7 +20,7 @@ This project provides a template for user authentication and serialization, usin
 Be sure that Node.js is installed. After cloning, navigate to the cloned folder in a terminal. Type 'npm start' to start the server locally. Navigate to 'localhost:3000' in a web browser to view the page.
 
 <h3 id='usage'>Usage</h3>
-<p>This program provides a template for setting up authentication routes with the MERN stack and Redux. Start out with this template in order to have login, logout, and signup functionality and routing already set up. Starting with the template, front-end and back-end functionality may be programmed as desired. </p>
+<p>If using this template, kindly provide credit by linking to this GitHub repository. This program provides a template for setting up authentication routes with the MERN stack and Redux. Start out with this template in order to have login, logout, and signup functionality and routing already set up. Starting with the template, front-end and back-end functionality may be programmed as desired. </p>
 
 <p>First, a short explanation of the React front end. Any data associated with a particular user may be retrieved by a particular component by using the useSelector Redux hook. An example of this may be found in Home.js. User state may be updated through the useDispatch Redux hook. In Home.js, the component is conditionally rendered differently, depending on whether a user is logged in or not. Finally, every time the app is reloaded, the Redux store is reset to its initial state. Therefore, the useEffect hook is used in the App.js component to retrieve the state upon page load and routing. </p>
 
