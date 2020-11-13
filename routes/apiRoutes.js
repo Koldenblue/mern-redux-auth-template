@@ -36,7 +36,7 @@ router.post('/users', (req, res) => {
 router.get("/userdata", (req, res) => {
   let user = req.user;
   // console.log(req)
-  console.log('apiRoutes.js', user)
+  // console.log('apiRoutes.js', user)
   if (user) {
     db.User.findById(user._id).then(userData => {
       // separate the password from the rest of the data, and respond with data
