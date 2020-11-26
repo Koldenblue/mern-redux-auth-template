@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCurrentUser, selectCurrentUser } from './redux/userSlice';
+import { setCurrentUser, selectCurrentUser } from '../redux/userSlice';
 
 export default function Home() {
   const [loginStatus, setLoginStatus] = useState();

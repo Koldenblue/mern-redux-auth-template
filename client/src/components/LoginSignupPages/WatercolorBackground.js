@@ -13,6 +13,6 @@ export default function WatercolorBackground() {
     }
   }
   return (<>
-    <Image src={require('../../assets/watercolor-background.png')} style={styles.waterBg} />
+    <Image src={require('../../assets/images/watercolor-background.png')} style={styles.waterBg} />
   </>)
 }
