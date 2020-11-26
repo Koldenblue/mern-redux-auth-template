@@ -7,7 +7,7 @@ import axios from 'axios';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import WatercolorBackground from "./WatercolorBackground";
-import { loggedInUser, selectLoggedInUser } from '../../redux/userSlice';
+import { setCurrentUser, selectCurrentUser } from '../../redux/userSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 function Login() {
@@ -16,7 +16,7 @@ function Login() {
   const [message, setMessage] = useState("");
   const history = useHistory();
   const dispatch = useDispatch();
-  let userInfo = useSelector(selectLoggedInUser);
+  let currentUser = useSelector(selectCurrentUser);
 
   let handleSubmit = (event) => {
     event.preventDefault();
@@ -34,7 +34,7 @@ function Login() {
         axios.get("/api/userdata").then(({data}) => {
           // set the user data in the redux store
           if (data) {
-            dispatch(loggedInUser(data))
+            dispatch(setCurrentUser(data))
           }
         })
         // finally, go to '/'
