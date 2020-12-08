@@ -7,16 +7,17 @@ import axios from 'axios';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import WatercolorBackground from "./WatercolorBackground";
-import { setCurrentUser, selectCurrentUser } from '../../redux/userSlice';
-import { useSelector, useDispatch } from 'react-redux';
+import { setCurrentUser } from '../../redux/userSlice';
+import { useDispatch } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [redirect, setRedirect] = useState();
   const history = useHistory();
   const dispatch = useDispatch();
-  let currentUser = useSelector(selectCurrentUser);
 
   let handleSubmit = (event) => {
     event.preventDefault();
@@ -36,9 +37,10 @@ function Login() {
           if (data) {
             dispatch(setCurrentUser(data))
           }
+        }).then(() => {
+          // finally, go to '/'. Can also use: history.push("/");
+          setRedirect(<Redirect to='/'></Redirect>)
         })
-        // finally, go to '/'
-        history.push("/");
       }).catch((err) => {
         if (err.message === "Request failed with status code 401") {
           setMessage("Incorrect username or password.");
@@ -59,15 +61,32 @@ function Login() {
     if (message !== "") {
       setMessage("");
     }
+    // dependency should not include message, otherwise it would always be set to blank
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [username, password])
 
-  // const devLogin = () => {
-  //   axios
-  //     .post(`/api/login`, { username: "test", password: "test" })
-  //     .then(() => window.location.replace("/"));
-  // };
+  // button to log in with preset username and pass
+  const devLogin = () => {
+    axios.post(`/api/login`, { username: "1", password: "1" }).then(data => {
+      axios.get("/api/userdata").then(({data}) => {
+        // set the user data in the redux store
+        if (data) {
+          dispatch(setCurrentUser(data))
+        }
+      }).then(() => {
+        setRedirect(<Redirect to='/'></Redirect>)
+      })
+    }).catch((err) => {
+      if (err.message === "Request failed with status code 401") {
+        setMessage("Incorrect username or password.");
+      } else {
+        console.log(err);
+      }
+    })
+  };
 
   return (<>
+    {redirect}
     <WatercolorBackground />
     <Container className='loginSignupContainer'>
       <Form>
