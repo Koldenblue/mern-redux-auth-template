@@ -6,6 +6,22 @@ mongoose.connect("mongodb://localhost/DBNAME", {
   useFindAndModify: false
 });
 
+db.User.deleteMany({}).then(() => {
+  db.User.create({username: '1', password: '111111'}).then((data) => {
+    console.log(data, 'username "1" with password "111111" inserted!')
+    process.exit(0);
+  }).catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+}).catch(err => {
+  console.error(err);
+  process.exit(1);
+});
+
+
+// Inserting a username and password won't work because of salting, but this code can be used to insert particular objects into the database
+/*
 // username 1, password 1
 let seeder = 
 {
@@ -23,3 +39,4 @@ let seeder =
     console.error(err);
     process.exit(1);
   });
+*/
