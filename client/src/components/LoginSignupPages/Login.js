@@ -10,6 +10,7 @@ import WatercolorBackground from "./WatercolorBackground";
 import { setCurrentUser } from '../../redux/userSlice';
 import { useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import LoginJumbotron from './LoginJumbotron';
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -45,7 +46,7 @@ function Login() {
         if (err.message === "Request failed with status code 401") {
           setMessage("Incorrect username or password.");
         } else {
-          console.log(err);
+          console.error(err);
         }
       })
     }
@@ -80,13 +81,14 @@ function Login() {
       if (err.message === "Request failed with status code 401") {
         setMessage("Incorrect username or password.");
       } else {
-        console.log(err);
+        console.error(err);
       }
     })
   };
 
   return (<>
     {redirect}
+    <LoginJumbotron />
     <WatercolorBackground />
     <Container className='loginSignupContainer'>
       <Form>

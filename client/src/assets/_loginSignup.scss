@@ -6,7 +6,6 @@
 
 .signupLoginBtns {
   margin: 2px;
-  
 }
 
 .login-title {
@@ -22,9 +21,6 @@
 
 .login-jumbotron {
   border-bottom: 1px solid black;
-}
-
-.jumbotron {
   padding: 2.5rem 0rem;
   background-color: #edf2f6;
   // max-width: 772px !important;
@@ -41,7 +37,7 @@
   .login-title {
     font-size: 3em;
   }
-  .jumbotron {
+  .login-jumbotron {
     text-align: left;
   }
 }
@@ -51,3 +47,4 @@
     font-size: 2em;
   }
 }
+/* ==================================*/

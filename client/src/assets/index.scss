@@ -1,15 +1,13 @@
-.loginSignupContainer {
-  margin-top: 2em;
-  position: relative;
-}
+@use 'loadingScreen';
+@use 'loginSignup';
+@use 'fourOhFour';
 
-.signupLoginBtns {
-  margin: 2px;
-}
 
+/* ===== Home.js page ===== */
 .home {
   position: absolute;
   left: 50%;
   top: 40%;
   transform: translateX(-50%) translateY(-50%);
 }
+/* ==================================*/
