@@ -118,13 +118,16 @@ function Signup({ loading, user }) {
             <Col></Col>
           </Form.Row>
 
-          <Col></Col>
-          <Col>
-            <AlertBox
-              message={message}
-            />
-          </Col>
-          <Col></Col>
+          <Form.Row>
+            <Col></Col>
+            <Col>
+              <AlertBox
+                message={message}
+              />
+            </Col>
+            <Col></Col>
+          </Form.Row>
+
         </Form>
       </Container>
     </>

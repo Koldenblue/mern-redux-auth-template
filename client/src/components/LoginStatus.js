@@ -4,16 +4,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setCurrentUser, selectCurrentUser } from '../redux/userSlice';
 
 // This page can be reached whether logged in or not, but will display different contents depending on login status.
-export default function Home() {
+export default function LoginStatus(props) {
   const [loginStatus, setLoginStatus] = useState();
   const dispatch = useDispatch();
   let currentUser = useSelector(selectCurrentUser);
 
   const logout = () => {
     Axios.get('api/logout').then(() => {
-      // reloading the page also works, since the logged in user is retrieved from the store upon page load
       dispatch(setCurrentUser(null));
-      // window.location.reload();
+      // reloading the page with window.location.reload() also works to log the user out, since the initial null user value is retrieved from the store upon page load
     })
   }
 
@@ -22,27 +21,32 @@ export default function Home() {
     if (currentUser) {
       // console.log(userInfo);
       setLoginStatus(
-      <div className='home'>
-        <p>
-          You are logged in as user "{currentUser.username}".
+        <div className='home'>
+          <p>
+            You are logged in as user "{currentUser.username}".
         </p>
-        <button className='btn-primary btn' onClick={logout}>log out</button>
-      </div>)
+          <button className='btn-primary btn' onClick={logout}>log out</button>
+        </div>)
     } else {
       setLoginStatus(
-      <div className='home'>
-        <p>
-          You are not logged in.
+        <div className='home'>
+          <p>
+            You are not logged in.
         </p>
-        <a href='/login'>Go to login page</a>
-      </div>)
+          <a href='/login'>Go to login page</a>
+        </div>)
     }
   }, [currentUser])
 
-
-  return(
-    <>
-      {loginStatus}
-    </>
-  )
+  // this code gets rid of the flash of 'you are not logged in' while still loading the logged in user
+  if (props.loading) {
+    return (<></>)
+  }
+  else {
+    return (
+      <>
+        {loginStatus}
+      </>
+    )
+  }
 }

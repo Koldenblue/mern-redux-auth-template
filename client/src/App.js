@@ -50,7 +50,7 @@ function App() {
           </Route>
 
           <Route exact path='/loginstatus'>
-            <LoginStatus />
+            <LoginStatus loading={loading}/>
           </Route>
 
           {/* Any path not listed above returns 404 */}

@@ -144,7 +144,6 @@ function Login() {
         </Form.Row>
 
         <Form.Row>
-
           <Col></Col>
           <Col>
             <AlertBox
@@ -152,7 +151,6 @@ function Login() {
             />
           </Col>
           <Col></Col>
-
         </Form.Row>
 
         <Button onClick={devLogin}>
