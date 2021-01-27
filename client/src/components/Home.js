@@ -8,7 +8,7 @@ export default function Home() {
 
   const logout = () => {
     Axios.get('api/logout').then(() => {
-      // reloading the page also works, since the logged in user is retrieved from the store upon page load
+      // reloading the page with "window.location.reload()" also works, since the initial user state is retrieved from the store upon page load
       dispatch(setCurrentUser(null));
       // window.location.reload();
     })

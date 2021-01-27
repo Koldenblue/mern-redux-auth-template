@@ -8,6 +8,11 @@ Develop/**
 develop/**
 *.code-workspace
 .env
+ui-debug.log
+firestore-debug.log
+database-debug.log
+.eslintcache
+
 
 # dependencies
 /node_modules

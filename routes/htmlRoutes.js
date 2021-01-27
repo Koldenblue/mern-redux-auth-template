@@ -1,13 +1,10 @@
 const router = require("express").Router();
 const path = require("path")
+const isAuthenticated = require('../config/middleware/isAuthenticated')
 // Routes starting with '/html/'
 
-// router.get("/members", isAuthenticated, (req, res) => {
-//     res.json("this is members area which should return a members.html from public folder. will redirect to login if not logged in")
-// })
-
-// router.get("*", (req,res) => {
-//     res.sendFile(path.join(__dirname, "../client/build/index.html"))
+// router.get("/sampleroute", isAuthenticated, (req, res) => {
+  // res.json("")
 // })
 
 module.exports = router;

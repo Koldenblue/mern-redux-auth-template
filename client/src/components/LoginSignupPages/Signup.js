@@ -39,6 +39,9 @@ function Signup({ loading, user }) {
           // window.location.href = '/login';
           history.push('/login');
         }
+      }).catch(err => {
+        console.error(err);
+        setMessage("Signup unsuccessful, unknown error.")
       })
     }
   }

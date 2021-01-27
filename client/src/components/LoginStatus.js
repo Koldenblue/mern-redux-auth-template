@@ -13,7 +13,7 @@ export default function LoginStatus(props) {
     Axios.get('api/logout').then(() => {
       dispatch(setCurrentUser(null));
       // reloading the page with window.location.reload() also works to log the user out, since the initial null user value is retrieved from the store upon page load
-    })
+    }).catch(err => { console.error(err) })
   }
 
   // upon login status change, conditionally render home page
@@ -45,6 +45,7 @@ export default function LoginStatus(props) {
   else {
     return (
       <>
+        <h5 className='text-center'>The below paragraph changes depending on whether a user is currently logged in.</h5>
         {loginStatus}
       </>
     )

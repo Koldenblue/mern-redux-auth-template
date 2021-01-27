@@ -41,6 +41,8 @@ function Login() {
         }).then(() => {
           // finally, go to '/'. Can also use: history.push("/");
           setRedirect(<Redirect to='/'></Redirect>)
+        }).catch((err) => {
+          throw new Error(err)
         })
       }).catch((err) => {
         if (err.message === "Request failed with status code 401") {
@@ -76,6 +78,8 @@ function Login() {
         }
       }).then(() => {
         setRedirect(<Redirect to='/'></Redirect>)
+      }).catch((err) => {
+        throw new Error(err)
       })
     }).catch((err) => {
       if (err.message === "Request failed with status code 401") {
@@ -153,10 +157,13 @@ function Login() {
           <Col></Col>
         </Form.Row>
 
+        {/* Button for easily logging in, after running seed.js. Comment this code out for production deployment. */}
         <Button onClick={devLogin}>
           Dev Login for protected route
         </Button>
         <br />
+
+        {/* Link to a page that can be accessed whether logged in or not, but changes depending on login status. */}
         <a href='/loginstatus'>Go to page dependent on login status</a>
       </Form>
     </Container>
