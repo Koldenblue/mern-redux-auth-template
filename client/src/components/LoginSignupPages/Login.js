@@ -16,7 +16,7 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const [redirect, setRedirect] = useState();
+  const [redirect, setRedirect] = useState(<></>);
   const history = useHistory();
   const dispatch = useDispatch();
 

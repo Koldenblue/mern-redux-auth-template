@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const axios = require("axios");
 const db = require("../models")
 const passport = require("../config/passport");
 require("dotenv").config();

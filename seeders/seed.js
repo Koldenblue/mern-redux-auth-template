@@ -20,6 +20,7 @@ db.User.deleteMany({}).then(() => {
 });
 
 
+
 // Inserting a username and password won't work because of salting, but this code can be used to insert particular objects into the database
 /*
 // username 1, password 1
