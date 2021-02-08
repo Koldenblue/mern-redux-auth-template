@@ -6,8 +6,8 @@ import Signup from './components/LoginSignupPages/Signup';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from 'axios';
 import Home from './components/Home';
-import FourOhFour from './components/FourOhFour';
-import ProtectedRoute from './components/ProtectedRoute';
+import FourOhFour from './components/FourOhFour/FourOhFour';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import LoginStatus from './components/LoginStatus';
 
 function App() {
