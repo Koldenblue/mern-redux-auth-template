@@ -1,5 +1,5 @@
 /* ===== Loading Screen ===== */
-.loading {
+.protected-route-component .loading {
   background-color: #ceffce;
   height: 100px;
   width: 200px;
@@ -9,8 +9,7 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
-
-.loading-bottom {
+.protected-route-component .loading-bottom {
   position: relative;
   background-color: #cde9f7;
   height: 50px;
@@ -19,8 +18,7 @@
   left: 50%;
   transform: translateX(-50%);
 }
-
-.loading-bars {
+.protected-route-component .loading-bars {
   position: relative;
   top: -100%;
   left: 50%;

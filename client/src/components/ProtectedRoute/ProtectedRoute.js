@@ -13,7 +13,7 @@ const ProtectedRoute = ({
 }) => {
     return isLoading ? (
       // loading animation component
-      <>
+      <div className='protected-route-component'>
         <div className='loading'>
           <div className='loading-bottom'>
             <div className='loading-bars'>
@@ -21,7 +21,7 @@ const ProtectedRoute = ({
             </div>
           </div>
         </div>
-      </>
+      </div>
     ) : user ? (
       <Route {...rest} />
     ) : (
