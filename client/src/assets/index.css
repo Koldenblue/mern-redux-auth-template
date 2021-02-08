@@ -1,0 +1,98 @@
+/* ===== Loading Screen ===== */
+.loading {
+  background-color: #ceffce;
+  height: 100px;
+  width: 200px;
+  top: 40%;
+  position: absolute;
+  box-shadow: 1px 1px 5px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.loading-bottom {
+  position: relative;
+  background-color: #cde9f7;
+  height: 50px;
+  width: 200px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.loading-bars {
+  position: relative;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ==================================*/
+/* ===== Login and Signup pages ===== */
+.loginSignupContainer {
+  margin-top: 2em;
+  position: relative;
+}
+
+.signupLoginBtns {
+  margin: 2px;
+}
+
+.login-title {
+  font-size: 4em;
+  background-color: rgba(217, 224, 230, 0.5);
+  padding: 0.25em;
+  border-radius: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline;
+}
+
+.login-jumbotron {
+  border-bottom: 1px solid black;
+  padding: 2.5rem 0rem;
+  background-color: #edf2f6;
+  overflow: hidden;
+  background-size: 100%;
+  min-width: 660px;
+  background-image: url(../images/bonsai-1920.jpg);
+  background-repeat: no-repeat;
+  text-align: right;
+  background-position: 0% 10%;
+}
+
+@media screen and (max-width: 716px) {
+  .login-title {
+    font-size: 3em;
+  }
+
+  .login-jumbotron {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 450px) {
+  .login-title {
+    font-size: 2em;
+  }
+}
+/* ==================================*/
+/* ===== 404 not found page ===== */
+.four-oh-four {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+/* ==================================*/
+/* ===== Home.js page ===== */
+.home {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+/* ==================================*/
+
+/*# sourceMappingURL=index.css.map */

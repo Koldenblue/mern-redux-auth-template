@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'react-bootstrap/Image';
+import waterBgImg from '../../assets/images/watercolor-background.png'
 
 export default function WatercolorBackground() {
 
@@ -9,10 +10,11 @@ export default function WatercolorBackground() {
       width: '50%',
       left: '50%',
       transform: 'translateX(-50%)',
-      marginTop: '-2em'
+      marginTop: '-2em',
+      zIndex: '-1'
     }
   }
   return (<>
-    <Image src={require('../../assets/images/watercolor-background.png')} style={styles.waterBg} />
+    <Image src={waterBgImg} style={styles.waterBg} />
   </>)
 }

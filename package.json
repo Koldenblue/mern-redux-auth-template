@@ -16,7 +16,8 @@
     "install": "cd client && npm install",
     "heroku-postbuild": "npm run build",
     "sass": "cd client/src/assets && sass.bat index.scss ./css-output/output.css && cd ../../..",
-    "watch-sass": "sass.bat --watch client/src/assets/index.scss client/src/assets/css-output/output.css"
+    "watch-sass": "sass.bat --watch ./client/src/",
+    "watch-sass-index": "sass.bat --watch client/src/assets/index.scss client/src/assets/css-output/output.css"
   },
   "repository": {
     "type": "git",
