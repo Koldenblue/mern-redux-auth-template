@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from 'axios';
 import Home from './components/Home';
 import FourOhFour from './components/FourOhFour/FourOhFour';
-import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
+import ProtectedRoute from './components/ProtectedRoute';
 import LoginStatus from './components/LoginStatus';
 
 function App() {
