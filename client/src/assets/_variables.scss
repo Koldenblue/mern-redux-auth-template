@@ -1,7 +1,7 @@
 // any variable, mixin, or function can be used in any file by importing vars.scss with "@use 'vars';"
 // then the <namespace>.<variable name>
 
-// ex. vars.sampleVar
+// ex. vars.$sampleVar
 $sampleVar: blue;
 
 // see https://sass-lang.com/documentation/at-rules
