@@ -1,4 +1,4 @@
-import { getByTestId, render, screen, toBeInTheDocument } from '@testing-library/react';
+import { getByTestId, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom'
 import App from './App';
 import store from './redux/store';

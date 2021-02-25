@@ -140,7 +140,7 @@ function Login() {
         <Form.Row>
           <Col></Col>
           <Col>
-            <Button className='signupLoginBtns' onClick={goToSignup} variant="success" type="submit">
+            <Button className='signupLoginBtns' onClick={goToSignup} variant="success">
               Sign Up Form
             </Button>
           </Col>

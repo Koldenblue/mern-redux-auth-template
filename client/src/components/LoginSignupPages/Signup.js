@@ -106,7 +106,7 @@ function Signup({ loading, user }) {
             <Col>
               <Button className='signupLoginBtns' onClick={handleSubmit} variant="danger" type="submit">
                 Sign up
-        </Button>
+              </Button>
             </Col>
             <Col></Col>
           </Form.Row>
@@ -114,9 +114,9 @@ function Signup({ loading, user }) {
           <Form.Row>
             <Col></Col>
             <Col>
-              <Button className='signupLoginBtns' onClick={goToLogin} variant="primary" type="submit">
+              <Button className='signupLoginBtns' onClick={goToLogin} variant="primary">
                 Go to Log In Form
-        </Button>
+              </Button>
             </Col>
             <Col></Col>
           </Form.Row>
